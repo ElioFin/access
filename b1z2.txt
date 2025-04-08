@@ -1,0 +1,17 @@
+CREATE TABLE Поставщики (
+НомерПоставщика AUTOINCREMENT PRIMARY KEY,
+Фамилия TEXT(50) NOT NULL,
+Имя TEXT(50) NOT NULL,
+Отчество TEXT(50) NOT NULL,
+Город TEXT(50) NOT NULL
+)
+
+CREATE TABLE Детали (
+НомерДетали AUTOINCREMENT PRIMARY KEY,
+Название TEXT(50) NOT NULL,
+Цвет TEXT(50) NOT NULL,
+Вес DOUBLE NOT NULL,
+ГородХранения TEXT(50) NOT NULL,
+НомерПоставщикаДетали INTEGER,
+FOREIGN KEY (НомерПоставщикаДетали) REFERENCES Поставщики(НомерПоставщика)
+)
